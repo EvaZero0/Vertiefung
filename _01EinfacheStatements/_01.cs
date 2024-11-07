@@ -6,6 +6,8 @@ char gedrueckteTaste = 'A'; // Deklaration und Initialisierung, Ende immer mit S
 
 string titel = "Wochenbericht";
 
-const double PI = 3.14; // Konstanten unveränderlich
+const double PI = 3.14; // Konstanten -> unveränderlich
 
 Console.WriteLine(titel);
+
+// var eineVariable; // eine nicht definierte Variable MUSS gleich einen Wert bekommen!

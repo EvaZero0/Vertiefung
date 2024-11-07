@@ -1,4 +1,4 @@
-﻿double[] temperaturen = { 15.3, 16.2, 22.7, 30.0 };
+﻿double[] temperaturen = [15.3, 16.2, 22.7, 30.0];
 double totalTemp = 0;
 int warmeTage = 0;
 
@@ -10,10 +10,12 @@ for (int i = 0; i < temperaturen.Length; i++)
     if (temperaturen[i] > 20)
         warmeTage++;
 }
-Console.WriteLine("Durchschnittstemperatur: " + totalTemp / temperaturen.Length + "\nTage über 20 Grad: " + warmeTage);
+
+Console.WriteLine("Durchschnittstemperatur: " + totalTemp / temperaturen.Length + " °C" +
+    "\nTage über 20 Grad: " + warmeTage);
 // Erstelle ein Array für Bestellpostenpreise: errechne die Gesamtsumme, ermittle den höchsten/niedrigsten Preis UND den Durchschnitt
 
-decimal[] bestPostenPreis = { 19.99m, 2.37m, 114.89m, 33.33m, 25.00m };
+decimal[] bestPostenPreis = [19.99m, 2.37m, 114.89m, 33.33m, 25.00m];
 decimal gesamtPreis = 0;
 decimal maxPreis = bestPostenPreis[0];
 decimal minPreis = bestPostenPreis[0];
@@ -29,7 +31,7 @@ for (int i = 0; i < bestPostenPreis.Length; i++)
 }
 decimal durchschnittPreis = Math.Round(gesamtPreis / bestPostenPreis.Length, 2);
 
-Console.WriteLine($"Gesamtpreis: {gesamtPreis}" +
-    $"\nHöchster Preis: {maxPreis}" +
-    $"\nNiedrigster Preis: {minPreis}" +
-    $"\nDurchschnittspreis: {durchschnittPreis}");
+Console.WriteLine($"Gesamtpreis: {gesamtPreis} $" +
+    $"\nHöchster Preis: {maxPreis} $" +
+    $"\nNiedrigster Preis: {minPreis} $" +
+    $"\nDurchschnittspreis: {durchschnittPreis} $");
