@@ -1,5 +1,6 @@
 ﻿decimal zahl1, zahl2, ergebnis;
 string operation;
+bool schleife = true;
 
 Console.WriteLine("Calculator\n" +
     "Anleitung:\n" +
@@ -11,10 +12,11 @@ do
 {
     Console.WriteLine("Zahl 1:");
     zahl1 = decimal.Parse(Console.ReadLine());
-    Console.WriteLine("Zahl 2:");
-    zahl2 = decimal.Parse(Console.ReadLine());
     Console.WriteLine("Rechenart: Addieren (A oder +), Subtrahieren (S oder -), Multiplizieren (M oder *), Dividieren (D oder /), Beenden (Q)");
     operation = Console.ReadLine().ToUpper();
+    Console.WriteLine("Zahl 2:");
+    zahl2 = decimal.Parse(Console.ReadLine());
+
     switch (operation)
     {
         case ("A" or "+"):
@@ -28,23 +30,24 @@ do
         case ("M" or "*"):
             ergebnis = zahl1 * zahl2;
             Console.WriteLine($"{zahl1} * {zahl2} = {ergebnis}");
-                        break;
-            case ("D" or  "/"):
+            break;
+        case ("D" or "/"):
             if (zahl2 == 0)
             {
                 Console.WriteLine("Division durch 0 ist nicht erlaubt.");
                 break;
             }
-            ergebnis= zahl1 / zahl2;
+            ergebnis = zahl1 / zahl2;
             Console.WriteLine($"{zahl1} / {zahl2} = {ergebnis}");
 
             break;
         case ("Q"):
+            schleife = false;
             break;
     }
     Console.WriteLine("[Q] zum Beenden oder sonstiges drücken, zum Fortfahren.");
     var userChoice = Console.ReadLine().ToUpper();
     if (userChoice == "Q")
         break;
-    
-} while (true);
+
+} while (schleife);
