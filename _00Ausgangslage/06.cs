@@ -1,4 +1,5 @@
-﻿// diese Programm funktioniert, ist aber nicht sehr gut lesbar (abgesehen von den Bezeichnern
+﻿// MONOLITHISCHE AUSGANGSSITUATION
+// dieses Programm funktioniert, ist aber nicht sehr gut lesbar (abgesehen von den Bezeichnern
 
 Console.WriteLine("erste Zahl: ");
 string ersteZahlEingabe = Console.ReadLine();
