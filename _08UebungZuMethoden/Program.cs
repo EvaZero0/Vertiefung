@@ -1,39 +1,30 @@
 ﻿double[] temperaturen = [15.3, 16.2, 22.7, 30.0];
-double summeTemp = 0;
-int warmeTage = 0;
 
-for (int i = 0; i < temperaturen.Length; i++)
-{
-    summeTemp += temperaturen[i];
-
-    if (temperaturen[i] > 20)
-        warmeTage++;
-}
-var durchschnittTemp = Math.Round(summeTemp / temperaturen.Length, 2);
+double durchschnittTemp = BerechneTempAvg(temperaturen);
+int anzahlWarmeTage = ZähleWarmeTage(temperaturen);
 
 Console.WriteLine($"Durchschnittstemperatur: {durchschnittTemp} °C " +
-    $"\nTage über 20 Grad: {warmeTage}");
+    $"\nTage über 20 Grad: {anzahlWarmeTage}");
 
-
-decimal[] bestPostenPreis = [19.99m, 2.37m, 114.89m, 33.33m, 25.00m];
-decimal gesamtPreis = bestPostenPreis[0];
-decimal maxPreis = bestPostenPreis[0];
-decimal minPreis = bestPostenPreis[0];
-
-for (int i = 1; i < bestPostenPreis.Length; i++)
+double BerechneTempAvg(double[] tempArray)
 {
-    gesamtPreis += bestPostenPreis[i];
-
-    if (bestPostenPreis[i] > maxPreis)
-        maxPreis = bestPostenPreis[i];
-    else if (bestPostenPreis[i] < minPreis)
-        minPreis = bestPostenPreis[i];
+    double summeTemp = 0;
+    for (int i = 0; i < temperaturen.Length; i++)
+    {
+        summeTemp += temperaturen[i];
+    }
+    double tempAvg = Math.Round(summeTemp / temperaturen.Length, 2);
+    return tempAvg;
 }
-decimal durchschnittPreis = Math.Round(gesamtPreis / bestPostenPreis.Length, 2);
 
-Console.WriteLine($"Gesamtpreis: {gesamtPreis} $" +
-    $"\nHöchster Preis: {maxPreis} $" +
-    $"\nNiedrigster Preis: {minPreis} $" +
-    $"\nDurchschnittspreis: {durchschnittPreis} $");
-
+int ZähleWarmeTage(double[] temperaturen)
+{
+    int warmeTage = 0;
+    for (int i = 0; i < temperaturen.Length; i++)
+    {
+        if (temperaturen[i] > 20)
+            warmeTage++;
+    }
+    return warmeTage;
+}
 
